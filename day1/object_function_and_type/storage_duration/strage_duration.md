@@ -67,7 +67,7 @@
     -------------------   .rodata segment (Read-Only)
     -------------------   .text segment (Read-Only, Executable)
     Low Address
-    ```
+    ``` 
 
 - Something instructions:
 
