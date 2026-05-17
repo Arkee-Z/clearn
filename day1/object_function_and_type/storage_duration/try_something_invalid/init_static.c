@@ -14,8 +14,15 @@ int main(void) {
     printf("&k = %d\n", &k);    // &k = -244269032
     printf("&j = %d\n", &j);    // &j = 1010799308  // Why &k and &j are different?
 
-    // j is read only.
-    // By default, gcc actually creates a new static variable k and copies the value of j to k.
-    // but in strict C(gcc with -pedantic or -std=c11 -pedantic-errors), it is error.
+    // Note: j is read-only (stack variable).
+    // Under default GCC (including -std=c11 -pedantic-errors, GCC 8+), 
+    // `static int k = j;` is accepted as a GNU extension because j is initialized with a compile-time constant (10).
+    // The assembly shows that k is directly initialized with the constant 10 in the .data section, 
+    // no runtime copy from j occurs.
+    // Strictly conforming C (e.g., Clang with -pedantic-errors) would reject this.
+
+    
+    // GCC extension: a const local variable with a compile-time constant initializer can be used to initialize a static variable.
+    // Not an error even with -pedantic-errors (GCC 8+).
 }
 
