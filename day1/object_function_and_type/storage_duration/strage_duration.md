@@ -1,0 +1,12 @@
+#### storage duration
+ - The storage duration is the property of an object that defines the minimum potential lifetime of the storage containing the object. The storage duration is determined by the the form of **declaration** or **allocation method** used to obtain storage for the object and is one of the following:
+    - static storage duration
+        - declared at file scope (outside any function) with or without `static`, or declared `static` inside a block.
+    - thread storage duration
+        - declared with _Thread_local (C11).
+    - automatic storage duration
+        - declared inside a block without `static` or `_Thread_local` (includes parameters).
+    - dynamic storage duration
+        - allocated by `malloc`, `calloc`, `realloc`, or `aligned_alloc`
+- A key point to note is that:
+    - Direct low-level memory access, while technically feasible during an object’s lifetime, is considered unsafe in software engineering. This is because it bypasses the intended scope and abstraction of the language, potentially leading to unpredictable program states. Tools like Cheat Engine operate precisely on this principle.
