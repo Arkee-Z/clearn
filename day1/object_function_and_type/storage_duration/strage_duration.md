@@ -1,6 +1,6 @@
 #### storage duration
 
- - **Storage duration**​ is a property of an object that defines the **minimum potential lifetime**​ of the memory in which it resides. The storage duration is determined by the form of **declaration** or **allocation method** used to obtain storage for the object and is one of the following:
+- **Storage duration**​ is a property of an object that defines the **minimum potential lifetime**​ of the memory in which it resides. The storage duration is determined by the form of **declaration** or **allocation method** used to obtain storage for the object and is one of the following:
 
     - **static storage duration**: 
 
